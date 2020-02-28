@@ -3,7 +3,7 @@
 # Contributor: ArcticVanguard <LideEmily at gmail dot com>
 # Contributor: ledti <antergist at gmail dot com>
 pkgname=obs-studio-git
-pkgver=23.0.1.r1051.g2dba1953
+pkgver=99999.23.0.1.r1051.g2dba1953
 pkgrel=1
 pkgdesc="Free and open source software for video recording and live streaming."
 arch=("i686" "x86_64")
@@ -28,7 +28,7 @@ md5sums=("SKIP" "SKIP")
 
 pkgver() {
   cd $pkgname
-  git describe --long --tags | sed -r "s/([^-]*-g)/r\1/;s/-/./g"
+  echo 99999.$(git describe --long --tags | sed -r "s/([^-]*-g)/r\1/;s/-/./g")
 }
 
 prepare() {
